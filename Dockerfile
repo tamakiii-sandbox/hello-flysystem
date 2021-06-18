@@ -5,6 +5,8 @@ RUN apt-get update && \
       git \
       wget \
       less \
+      zip \
+      unzip \
       && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
