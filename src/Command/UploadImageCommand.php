@@ -8,6 +8,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Yaml\Yaml;
 use Aws;
+use Imagine;
 use League\Flysystem;
 
 class UploadImageCommand extends Command
@@ -30,6 +31,14 @@ class UploadImageCommand extends Command
 		$filepath = $input->getArgument('file');
 		$mimeType = $input->getArgument('mime-type');
 
+		$file = fopen($filepath, 'r');
+
+		$imagine = new Imagine\Gd\Imagine;
+		$image = $imagine->open($filepath);
+		$image
+			->thumbnail(new Imagine\Image\Box(200, 200))
+			->save('/tmp/image.png');
+
         $client = new Aws\S3\S3Client([
 			'endpoint' => 'http://localhost:4566',
 			'region' => 'ap-northeast-1',
@@ -37,8 +46,6 @@ class UploadImageCommand extends Command
 			'profile' => 'localstack',
 			'use_path_style_endpoint' => true,
 		]);
-
-		$file = fopen($filepath, 'r');
 
 		$adapter = new Flysystem\AwsS3V3\AwsS3V3Adapter($client, 'example.com');
 		$filesystem = new Flysystem\Filesystem($adapter);
