@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+  php:
+    build: .
+    command: symfony server:start --port=80
+    working_dir: /local/app
+    volumes:
+      - .:/local/app
+    ports:
+      - ${PORT_HTTP:-8888}:80
+
+  mysql:
+    image: mysql:8.0.25
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - ${PORT_MYSQL:-3306}:3306
+    environment:
+      MYSQL_DATABASE: app
+      MYSQL_ROOT_PASSWORD: password
+
+  localstack:
+    image: localstack/localstack:0.12.12
+    environment:
+      - SERVICES=s3
+      - DEFAULT_REGION=ap-northeast-1
+      - DATA_DIR=/tmp/localstack/data
+      - DEBUG=1
+    ports:
+      - ${PORT_LOCALSTACK:-4566}:4566
+    volumes:
+      - ./docker/localstack/docker-entrypoint-initaws.d:/docker-entrypoint-initaws.d
+      - ./docker/localstack/tmp/init:/tmp/init
+
+volumes:
+  mysql_data:
