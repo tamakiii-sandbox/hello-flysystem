@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "123a4f31f2b382f548fabde063288fc3",
+    "content-hash": "c9d736c60b3c4b6d38b16569cf4eb535",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2058,6 +2058,61 @@
                 }
             ],
             "time": "2021-05-25T18:28:31+00:00"
+        },
+        {
+            "name": "league/flysystem-aws-s3-v3",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem-aws-s3-v3.git",
+                "reference": "8d8edfe2541d94e6607808e3dd8484734c86eb2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-aws-s3-v3/zipball/8d8edfe2541d94e6607808e3dd8484734c86eb2a",
+                "reference": "8d8edfe2541d94e6607808e3dd8484734c86eb2a",
+                "shasum": ""
+            },
+            "require": {
+                "aws/aws-sdk-php": "^3.132.4",
+                "league/flysystem": "^2.0.0",
+                "league/mime-type-detection": "^1.0.0",
+                "php": "^7.2 || ^8.0"
+            },
+            "conflict": {
+                "guzzlehttp/ringphp": "<1.1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\Flysystem\\AwsS3V3\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frankdejonge.nl"
+                }
+            ],
+            "description": "AWS S3 filesystem adapter for Flysystem.",
+            "keywords": [
+                "Flysystem",
+                "aws",
+                "file",
+                "files",
+                "filesystem",
+                "s3",
+                "storage"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/flysystem-aws-s3-v3/issues",
+                "source": "https://github.com/thephpleague/flysystem-aws-s3-v3/tree/2.1.0"
+            },
+            "time": "2021-05-24T15:37:00+00:00"
         },
         {
             "name": "league/mime-type-detection",
