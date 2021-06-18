@@ -1,4 +1,7 @@
 {
+    "aws/aws-sdk-php": {
+        "version": "3.184.6"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.2"
     },
@@ -105,6 +108,12 @@
     },
     "laminas/laminas-code": {
         "version": "4.4.0"
+    },
+    "league/flysystem": {
+        "version": "2.1.0"
+    },
+    "league/mime-type-detection": {
+        "version": "1.7.0"
     },
     "monolog/monolog": {
         "version": "2.2.0"
