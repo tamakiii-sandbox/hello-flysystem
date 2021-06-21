@@ -1,4 +1,7 @@
 {
+    "aws/aws-sdk-php": {
+        "version": "3.184.6"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.2"
     },
@@ -103,8 +106,20 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
+    "imagine/imagine": {
+        "version": "1.2.4"
+    },
     "laminas/laminas-code": {
         "version": "4.4.0"
+    },
+    "league/flysystem": {
+        "version": "2.1.0"
+    },
+    "league/flysystem-aws-s3-v3": {
+        "version": "2.1.0"
+    },
+    "league/mime-type-detection": {
+        "version": "1.7.0"
     },
     "monolog/monolog": {
         "version": "2.2.0"
